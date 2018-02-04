@@ -86,51 +86,51 @@ namespace GeoJSON.Net.Tests.Features
             Assert_Are_Equal(left, right);
         }
 
-        [Test]
-        public void FeatureCollection_Test_IndexOf()
-        {
-            var model = new FeatureCollection();
-            var expectedIds = new List<string>();
-            var expectedIndexes = new List<int>();
+        //[Test]
+        //public void FeatureCollection_Test_IndexOf()
+        //{
+        //    var model = new FeatureCollection();
+        //    var expectedIds = new List<string>();
+        //    var expectedIndexes = new List<int>();
 
-            for (var i = 0; i < 10; i++)
-            {
-                var id = "id" + i;
+        //    for (var i = 0; i < 10; i++)
+        //    {
+        //        var id = "id" + i;
 
-                expectedIds.Add(id);
-                expectedIndexes.Add(i);
+        //        expectedIds.Add(id);
+        //        expectedIndexes.Add(i);
 
-                var geom = new LineString(new[]
-                {
-                    new Position(51.010, -1.034),
-                    new Position(51.010, -0.034)
-                });
+        //        var geom = new LineString(new[]
+        //        {
+        //            new Position(51.010, -1.034),
+        //            new Position(51.010, -0.034)
+        //        });
 
-                var props = FeatureTests.GetPropertiesInRandomOrder();
+        //        var props = FeatureTests.GetPropertiesInRandomOrder();
 
-                var feature = new Feature(geom, props, id);
-                model.Features.Add(feature);
-            }
+        //        var feature = new Feature(geom, props, id);
+        //        model.Features.Add(feature);
+        //    }
 
-            for (var i = 0; i < 10; i++)
-            {
-                var actualFeature = model.Features[i];
-                var actualId = actualFeature.Id;
-                var actualIndex = model.Features.IndexOf(actualFeature);
+        //    for (var i = 0; i < 10; i++)
+        //    {
+        //        var actualFeature = model.Features[i];
+        //        var actualId = actualFeature.Id;
+        //        var actualIndex = model.Features.IndexOf(actualFeature);
 
-                var expectedId = expectedIds[i];
-                var expectedIndex = expectedIndexes[i];
+        //        var expectedId = expectedIds[i];
+        //        var expectedIndex = expectedIndexes[i];
 
-                Assert.AreEqual(expectedId, actualId);
-                Assert.AreEqual(expectedIndex, actualIndex);
+        //        Assert.AreEqual(expectedId, actualId);
+        //        Assert.AreEqual(expectedIndex, actualIndex);
 
-                Assert.Inconclusive("not supported. the Feature.Id is optional. " + 
-                    " create a new class that inherits from" +
-                    " Feature and then override Equals and GetHashCode");
+        //        Assert.Inconclusive("not supported. the Feature.Id is optional. " + 
+        //            " create a new class that inherits from" +
+        //            " Feature and then override Equals and GetHashCode");
 
-            }
+        //    }
 
-        }
+        //}
 
 
         private FeatureCollection GetFeatureCollection()
