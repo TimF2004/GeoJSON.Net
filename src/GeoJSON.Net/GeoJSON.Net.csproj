@@ -9,6 +9,7 @@
     <Authors></Authors>
     <Company>GeoJSON.Net</Company>
     <Copyright>Copyright © Matt Hunt, Joerg Battermann and Contributor, 2014 - 2017</Copyright>
+    <RootNamespace>GeoJSON.Net</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
